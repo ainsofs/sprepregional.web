@@ -114,6 +114,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="README.md" />
     <None Include="SwaggerUI\lib\.DS_Store" />
     <None Include="Web.config.defaults" />
   </ItemGroup>
