@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="D:\Projects\Csharp\Sprep.Soo\PEIN\Inmagic.Mercury.WCFServices.Toolkit\Deploy" deleteExistingFiles="True" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="Profile1" publishMethod="FileSystem" replaceMatchingFiles="False" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="SwaggerUI/lib/jquery.min.js" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="SwaggerUI/lib/jquery.wiggle.min.js" publishTime="04/08/2015 15:08:49" />
+    <file relUrl="bin/WebActivator.dll" publishTime="04/08/2015 13:55:18" />
+    <file relUrl="Global.asax" publishTime="04/08/2015 14:39:08" />
+    <file relUrl="SwaggerUI/css/screen.css" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="bin/InmagicPrestoServices.dll" publishTime="01/14/2015 14:59:18" />
+    <file relUrl="bin/System.Web.Http.WebHost.xml" publishTime="05/30/2012 01:00:26" />
+    <file relUrl="SwaggerUI/swagger-ui.min.js" publishTime="04/09/2015 11:38:56" />
+    <file relUrl="bin/Swagger.Net.xml" publishTime="04/08/2015 13:55:18" />
+    <file relUrl="bin/System.Net.Http.dll" publishTime="07/10/2012 21:52:12" />
+    <file relUrl="bin/System.Net.Http.Formatting.dll" publishTime="07/10/2012 21:51:54" />
+    <file relUrl="SwaggerUI/lib/backbone-min.js" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="SwaggerUI/lib/swagger.js" publishTime="04/08/2015 15:08:49" />
+    <file relUrl="bin/SPREPREGIONAL.Web.pdb" publishTime="04/09/2015 11:47:05" />
+    <file relUrl="SwaggerUI/index.html" publishTime="04/09/2015 11:46:53" />
+    <file relUrl="bin/Swagger.Net.dll" publishTime="04/08/2015 13:55:18" />
+    <file relUrl="SwaggerUI/images/pet_store_api.png" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="SwaggerUI/images/throbber.gif" publishTime="04/09/2015 11:37:16" />
+    <file relUrl="bin/SPREPREGIONAL.Web.XML" publishTime="04/09/2015 11:47:05" />
+    <file relUrl="packages.config" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="bin/System.Web.Http.xml" publishTime="06/09/2012 01:00:32" />
+    <file relUrl="SwaggerUI/lib/jquery.ba-bbq.min.js" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="bin/System.Web.Http.dll" publishTime="07/10/2012 21:51:54" />
+    <file relUrl="bin/Inmagic.Mercury.WCFServices.Connection.dll" publishTime="11/07/2014 17:40:50" />
+    <file relUrl="bin/Swagger.Net.pdb" publishTime="04/08/2015 13:55:18" />
+    <file relUrl="SwaggerUI/images/wordnik_api.png" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="SwaggerUI/lib/jquery.slideto.min.js" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="SwaggerUI/lib/handlebars.runtime-1.0.0.beta.6.js" publishTime="04/08/2015 15:08:50" />
+    <file relUrl="SwaggerUI/lib/underscore-min.js" publishTime="04/08/2015 15:08:49" />
+    <file relUrl="SwaggerUI/swagger-ui.js" publishTime="04/09/2015 11:41:54" />
+    <file relUrl="bin/System.Web.Http.WebHost.dll" publishTime="07/10/2012 21:51:54" />
+    <file relUrl="bin/System.Net.Http.xml" publishTime="06/23/2012 01:00:28" />
+    <file relUrl="bin/Microsoft.Web.Infrastructure.dll" publishTime="04/08/2015 11:44:02" />
+    <file relUrl="Web.config" publishTime="04/09/2015 11:48:16" />
+    <file relUrl="bin/System.Net.Http.Formatting.xml" publishTime="05/30/2012 01:00:26" />
+    <file relUrl="favicon.ico" publishTime="04/08/2015 14:30:10" />
+    <file relUrl="bin/Sprep.Soo.Pein.Bl.dll" publishTime="04/09/2015 11:34:32" />
+    <file relUrl="bin/Sprep.Soo.Pein.Bl.pdb" publishTime="04/09/2015 11:34:31" />
+    <file relUrl="bin/SPREPREGIONAL.Web.dll" publishTime="04/09/2015 11:47:06" />
+  </publishProfile>
+</publishData>
