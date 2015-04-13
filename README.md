@@ -19,4 +19,6 @@ InmagicKey, InmagicIV, ServiceUser, ServicePass (For more information see Presto
 
 ## Libraries Used
 - Web API
+- Presto API
+- SPREPREGIONAL.BL (to be uploaded)
 - Swagger / Swagger.Net / Swagger UI
