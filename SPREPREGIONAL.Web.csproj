@@ -79,6 +79,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="SwaggerUI\css\screen.css" />
