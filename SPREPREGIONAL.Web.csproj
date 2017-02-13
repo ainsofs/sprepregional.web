@@ -128,6 +128,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
     <None Include="README.md" />
     <None Include="SwaggerUI\lib\.DS_Store" />
     <None Include="Web.config.defaults" />

@@ -19,6 +19,11 @@ namespace SPREPREGIONAL.Web.Controllers {
             Id
         }
 
+        static public string APP_URL {
+            get { return System.Configuration.ConfigurationManager.AppSettings["AppUrl"]; }
+            //set { _API_CALLER_USERNAME = value; }
+        }
+
         #region Main
 
         /// <summary>
@@ -48,6 +53,7 @@ namespace SPREPREGIONAL.Web.Controllers {
 
             try {
                 var sr = BL.GetPeinItemBySearch(q, pageNo, itemCount);
+                sr.Result = FormatDetailUrl(sr.Result);
                 response = new WebApiResponse<SearchResult>(sr);
             } catch (Exception ex) {
                 response = new WebApiResponse<SearchResult>("", ex.Message, null);
@@ -125,16 +131,19 @@ namespace SPREPREGIONAL.Web.Controllers {
         /// <summary>
         /// Get PEIN items either by Content Item Id or Record Id
         /// </summary>
-        /// <param name="ids">array of ids (json eg [1,2,3])</param>
+        /// <param name="ids">array of ids (json eg 1|2|3)</param>
         /// <param name="idType">Use 'id' for Content Item Id OR 'rid' for Record Id</param>
         /// <returns></returns>
-        public IWebApiResponse GetByIds(int[] ids, string idType) {
+        public IWebApiResponse GetByIds(string ids, string idType)
+        {
+            var int32Ids = ids.Split(new string[] { "|" }, StringSplitOptions.RemoveEmptyEntries).Select(x => Convert.ToInt32(x)).ToArray();
+
             switch (idType) {
                 case "id":
-                    return RetByIds(ids);
+                    return RetByIds(int32Ids);
                 case "rid":
                     //default:
-                    return RetByRecordIds(ids);
+                    return RetByRecordIds(int32Ids);
             }
 
             var r = new SearchResult { Info = new SearchResult.ResultInfo { Text = "No items found" } };
@@ -188,7 +197,7 @@ namespace SPREPREGIONAL.Web.Controllers {
                     rr = BL.GetPeinItemByRecordIds(ids);
 
                 var sr = new SearchResult {
-                    Result = rr
+                    Result = FormatDetailUrl(rr)
                 };
 
                 if (rr.Any()) {
@@ -210,6 +219,24 @@ namespace SPREPREGIONAL.Web.Controllers {
             }
 
             return response;
+        }
+
+        /// <summary>
+        /// Format the Detail Url properly
+        /// </summary>
+        /// <param name="pList"></param>
+        /// <returns></returns>
+        [ApiExplorerSettings(IgnoreApi = true)]
+        protected List<PeinInfo> FormatDetailUrl(List<PeinInfo> pList)
+        {
+            var result = new List<PeinInfo>();
+            foreach (var p in pList)
+            {
+                p.DetailUrl = string.Format("{0}{1}", APP_URL, p.DetailUrl);
+                result.Add(p);
+            }
+
+            return result;
         }
         #endregion
     }
