@@ -43,6 +43,33 @@ namespace SPREPREGIONAL.Web.Controllers {
         /// PEIN Catalogue Full-Text search. Accepts AND OR statements. See Presto User Guide for full searching wildcards
         /// </summary>
         /// <param name="q">Search query. Type "all" to find all available records</param>
+        /// <param name="returnIds">Return just the ids or the full details. Valid values: true | false</param>
+        /// <param name="pageNo">Page Number</param>
+        /// <param name="itemCount">Number of items per page</param>
+        /// <returns></returns>
+        public IWebApiResponse GetIdsBySearch(string q, bool returnIds, int pageNo, int itemCount) {
+            if (!returnIds)
+            {
+                return GetBySearch(q, pageNo, itemCount);
+            }
+            var response = new WebApiResponse<SearchResultIds>(new SearchResultIds());
+            if (q == "all")
+                q = string.Empty;
+            try {
+                var sr = BL.GetPeinIdsBySearch(q, pageNo, itemCount);
+                response = new WebApiResponse<SearchResultIds>(sr);
+            }
+            catch (Exception ex) {
+                response = new WebApiResponse<SearchResultIds>("", ex.Message, null);
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// PEIN Catalogue Full-Text search. Accepts AND OR statements. See Presto User Guide for full searching wildcards
+        /// </summary>
+        /// <param name="q">Search query. Type "all" to find all available records</param>
         /// <param name="pageNo">Page Number</param>
         /// <param name="itemCount">Number of items per page</param>
         /// <returns></returns>
@@ -146,7 +173,7 @@ namespace SPREPREGIONAL.Web.Controllers {
                     return RetByRecordIds(int32Ids);
             }
 
-            var r = new SearchResult { Info = new SearchResult.ResultInfo { Text = "No items found" } };
+            var r = new SearchResult { Info = new ResultInfo { Text = "No items found" } };
             return new WebApiResponse<SearchResult>(r);
         }
         #endregion
@@ -202,14 +229,14 @@ namespace SPREPREGIONAL.Web.Controllers {
 
                 if (rr.Any()) {
                     int count = rr.Count();
-                    sr.Info = new SearchResult.ResultInfo {
+                    sr.Info = new ResultInfo {
                         TotalFound = count,
                         Showing = count,
                         StartRow = 0,
                         EndRow = count
                     };
                 } else {
-                    sr.Info = new SearchResult.ResultInfo { Text = "No matches found" };
+                    sr.Info = new ResultInfo { Text = "No matches found" };
                 }
 
                 response = new WebApiResponse<SearchResult>(sr);
